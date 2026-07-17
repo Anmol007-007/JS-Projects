@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Your favourite music is here</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="logo.png" alt="Spotify">
+                <span>Spotify</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active" data-view="home" id="menu-home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="menu-item" data-view="search" id="menu-search">
+                    <i class="fas fa-search"></i>
+                    <span>Search</span>
+                </a>
+                <a href="#" class="menu-item" data-view="library" id="menu-library">
+                    <i class="fas fa-list"></i>
+                    <span>Your Library</span>
+                </a>
+            </nav>
+            <div class="library-playlists">
+                <span class="playlist-header">PLAYLISTS</span>
+                <div class="playlist-list">
+                    <a href="#" class="playlist-item" data-playlist="ncs" id="playlist-ncs">Best of NCS</a>
+                    <a href="#" class="playlist-item" data-playlist="liked" id="playlist-liked">Liked Songs</a>
+                    <a href="#" class="playlist-item" data-playlist="lofi" id="playlist-lofi">Chill Lofi Mix</a>
+                    <a href="#" class="playlist-item" data-playlist="workout" id="playlist-workout">Workout Beats</a>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <div class="nav-arrows">
+                    <button class="arrow-btn" id="nav-back"><i class="fas fa-chevron-left"></i></button>
+                    <button class="arrow-btn" id="nav-forward"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="search-bar-container" id="header-search-bar" style="display: none;">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="search-input" placeholder="What do you want to listen to?">
+                    <button id="search-clear-btn"
+                        style="display: none; background: transparent; border: none; color: var(--text-secondary); cursor: pointer; padding-left: 8px;"><i
+                            class="fas fa-times"></i></button>
+                </div>
+                <div class="user-tag">
+                    <i class="far fa-user"></i>
+                    <span>Guest User</span>
+                </div>
+            </header>
+            <div id="home-view" class="page-view">
+                <section class="welcome-section">
+                    <h1 class="welcome-title" id="welcome-message">Good evening</h1>
+                    <div class="dashboard-grid">
+                        <div class="grid-card" data-playlist="ncs">
+                            <img src="covers/1.jpg" alt="Best of NCS">
+                            <span class="card-title">Best of NCS</span>
+                            <button class="play-card-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="grid-card" data-playlist="liked">
+                            <div class="liked-card-gradient">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <span class="card-title">Liked Songs</span>
+                            <button class="play-card-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="grid-card" data-playlist="lofi">
+                            <img src="covers/2.jpg" alt="Chill Lofi Mix">
+                            <span class="card-title">Chill Lofi Mix</span>
+                            <button class="play-card-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                        <div class="grid-card" data-playlist="workout">
+                            <img src="covers/3.jpg" alt="Workout Beats">
+                            <span class="card-title">Workout Beats</span>
+                            <button class="play-card-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-shelf">
+                    <h2 class="shelf-title">Made For You</h2>
+                    <div class="shelf-grid">
+                        <div class="shelf-card" data-playlist="ncs">
+                            <div class="card-img-container">
+                                <img src="covers/1.jpg" alt="Best of NCS">
+                                <button class="play-shelf-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                            <h4>Best of NCS</h4>
+                            <p>No Copyright Sounds - Elevate your focus with the ultimate collection.</p>
+                        </div>
+                        <div class="shelf-card" data-playlist="lofi">
+                            <div class="card-img-container">
+                                <img src="covers/2.jpg" alt="Chill Lofi Mix">
+                                <button class="play-shelf-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                            <h4>Chill Lofi Mix</h4>
+                            <p>Relax and study with smooth lo-fi beats.</p>
+                        </div>
+                        <div class="shelf-card" data-playlist="workout">
+                            <div class="card-img-container">
+                                <img src="covers/3.jpg" alt="Workout Beats">
+                                <button class="play-shelf-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                            <h4>Workout Beats</h4>
+                            <p>Power up your gym session with energetic music.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="search-view" class="page-view" style="display: none;">
+                <section class="search-results-section" id="search-results-container" style="display: none;">
+                    <h2 class="shelf-title">Search Results</h2>
+                    <div class="song-list-section-compact">
+                        <div class="songItemContainer" id="search-results-list">
+                        </div>
+                    </div>
+                </section>
+                <section class="browse-all-section">
+                    <h2 class="shelf-title">Browse all</h2>
+                    <div class="browse-grid">
+                        <div class="browse-card" style="background-color: rgb(39, 133, 106);" data-search-genre="NCS">
+                            <span>NCS Releases</span>
+                        </div>
+                        <div class="browse-card" style="background-color: rgb(30, 50, 100);"
+                            data-search-genre="Salam-e-Ishq">
+                            <span>Salam-e-Ishq</span>
+                        </div>
+                        <div class="browse-card" style="background-color: rgb(141, 103, 171);"
+                            data-search-genre="Warriyo">
+                            <span>Warriyo</span>
+                        </div>
+                        <div class="browse-card" style="background-color: rgb(232, 17, 137);" data-search-genre="Cielo">
+                            <span>Ambient Cielo</span>
+                        </div>
+                        <div class="browse-card" style="background-color: rgb(33, 150, 243);"
+                            data-search-genre="Invincible">
+                            <span>Invincible</span>
+                        </div>
+                        <div class="browse-card" style="background-color: rgb(186, 93, 7);"
+                            data-search-genre="My Heart">
+                            <span>My Heart</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="library-view" class="page-view" style="display: none;">
+                <section class="section-shelf">
+                    <h1 class="welcome-title">Your Playlists</h1>
+                    <div class="shelf-grid">
+                        <div class="shelf-card" data-playlist="liked">
+                            <div class="card-img-container">
+                                <div class="liked-shelf-gradient">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <button class="play-shelf-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                            <h4 id="library-liked-title">Liked Songs</h4>
+                            <p id="library-liked-count">Playlist • 0 songs</p>
+                        </div>
+                        <div class="shelf-card" data-playlist="ncs">
+                            <div class="card-img-container">
+                                <img src="covers/1.jpg" alt="Best of NCS">
+                                <button class="play-shelf-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                            <h4>Best of NCS</h4>
+                            <p>Playlist • Spotify</p>
+                        </div>
+                        <div class="shelf-card" data-playlist="lofi">
+                            <div class="card-img-container">
+                                <img src="covers/2.jpg" alt="Chill Lofi Mix">
+                                <button class="play-shelf-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                            <h4>Chill Lofi Mix</h4>
+                            <p>Playlist • Spotify</p>
+                        </div>
+                        <div class="shelf-card" data-playlist="workout">
+                            <div class="card-img-container">
+                                <img src="covers/3.jpg" alt="Workout Beats">
+                                <button class="play-shelf-btn"><i class="fas fa-play"></i></button>
+                            </div>
+                            <h4>Workout Beats</h4>
+                            <p>Playlist • Spotify</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="playlist-view" class="page-view" style="display: none;">
+                <section class="playlist-banner" id="dynamic-banner">
+                    <div class="banner-content">
+                        <span class="sub-tag" id="banner-playlist-tag">PLAYLIST</span>
+                        <h1 class="banner-title" id="banner-playlist-title">Best of NCS</h1>
+                        <p class="banner-description" id="banner-playlist-desc">No Copyright Sounds - Elevate your focus
+                            with the ultimate collection.</p>
+                    </div>
+                </section>
+                <section class="song-list-section" style="padding-top: 24px;">
+                    <div class="list-actions">
+                        <button class="playlist-play-btn" id="playlist-action-play">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="list-header-row">
+                        <span class="col-num">#</span>
+                        <span class="col-title">TITLE</span>
+                        <span class="col-duration"><i class="far fa-clock"></i></span>
+                    </div>
+                    <div class="songItemContainer" id="playlist-songs-container">
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <footer class="bottom">
+        <div class="progress-row">
+            <span id="currentTime" class="time-text">0:00</span>
+            <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+            <span id="totalDuration" class="time-text">0:00</span>
+        </div>
+        <div class="player-bar-layout">
+            <div class="songInfo">
+                <div class="album-art-container">
+                    <img src="playing.gif" alt="" id="gif">
+                </div>
+                <div class="song-text-meta">
+                    <span id="masterSongName">Warriyo - Mortals [NCS Release]</span>
+                    <span class="song-artist-sub">No Copyright Sounds</span>
+                </div>
+                <div class="sound-equalizer" id="soundEqualizer">
+                    <span class="eq-bar bar-1"></span>
+                    <span class="eq-bar bar-2"></span>
+                    <span class="eq-bar bar-3"></span>
+                    <span class="eq-bar bar-4"></span>
+                </div>
+            </div>
+            <div class="player-controls">
+                <div class="icons">
+                    <i class="fas fa-random control-icon" id="shuffle" title="Shuffle"></i>
+                    <i class="fas fa-step-backward control-icon" id="previous" title="Previous"></i>
+                    <i class="far fa-play-circle master-play-icon" id="masterPlay" title="Play"></i>
+                    <i class="fas fa-step-forward control-icon" id="next" title="Next"></i>
+                    <i class="fas fa-redo-alt control-icon" id="repeat" title="Repeat One"></i>
+                </div>
+            </div>
+            <div class="volume-control-group">
+                <i class="fas fa-volume-up" id="volumeIcon" title="Mute/Unmute"></i>
+                <input type="range" id="volumeSlider" min="0" max="100" value="80" title="Volume">
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
