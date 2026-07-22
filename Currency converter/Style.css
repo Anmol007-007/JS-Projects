@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #19757a;
+}
+
+.container {
+    padding: 2rem;
+    border-radius: 1rem;
+    min-height: 30vh;
+    width: 40vh;
+    background-color: #fff;
+}
+
+.amount {
+    width: 100%;
+}
+
+.amount p {
+    font-size: 1rem;
+}
+
+.amount input {
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 0.3rem;
+}
+
+form {
+    margin: 2rem 0 1 rem 0;
+
+}
+
+form select,
+button {
+    width: 100%;
+    border: none;
+    outline: none;
+
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+}
+
+.select-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 0.3rem;
+
+}
+
+#exchangeButton {
+    height: 2rem;
+    background-color: #323f45;
+    color: white;
+    margin-top: 2rem;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+#exchangeButton:hover {
+    background-color: #252f33;
+}

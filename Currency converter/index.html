@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link href="Style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        <form>
+            <div class="amount">
+                <p>Enter Amount</p>
+                <input type="text" value="1">
+
+            </div>
+            <div class="dropdown">
+                <div class="from">
+                    <p>From</p>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/US/shiny/64.png">
+                        <select name="from">
+                        </select>
+                    </div>
+                </div>
+                <i class="fa fa-exchange" style="font-size:24px"></i>
+                <div class="to">
+                    <p>To</p>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/IN/shiny/64.png">
+                        <select name="to">
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            <p id="msg">1USD = 80INR</p>
+            <button id="exchangeButton">Get Exchange Rate</button>
+        </form>
+
+    </div>
+    <script src="c_codes.js"></script>
+    <script src="Script.js"></script>
+</body>
+
+</html>
